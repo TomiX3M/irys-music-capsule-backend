@@ -38,7 +38,7 @@ app.get("/callback", async (req, res) => {
   });
 
   const data = await response.json();
-  res.redirect(`https://irys-music-capsule.netlify.app/?access_token=${data.access_token}`);
+  res.redirect(`https://irys-music-capsule.netlify.app?access_token=${data.access_token}`);
 });
 
 // Step 3: Get user’s top tracks
