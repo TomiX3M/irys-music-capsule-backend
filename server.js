@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
-const redirectUri = "http://127.0.0.1:4000/callback"; // must match Spotify app settings
+const redirectUri = "https://irys-music-capsule-backend.onrender.com//callback"; // must match Spotify app settings
 
 // Step 1: Redirect user to Spotify login
 app.get("/login", (req, res) => {
@@ -38,7 +38,7 @@ app.get("/callback", async (req, res) => {
   });
 
   const data = await response.json();
-  res.redirect(`http://localhost:3000?access_token=${data.access_token}`);
+  res.redirect(`https://irys-music-capsule.netlify.app/?access_token=${data.access_token}`);
 });
 
 // Step 3: Get user’s top tracks
@@ -74,4 +74,4 @@ app.get("/top-artists", async (req, res) => {
   });
   
 
-app.listen(4000, () => console.log("✅ Server running at http://localhost:4000"));
+app.listen(4000, () => console.log("✅ Server running at https://irys-music-capsule-backend.onrender.com"));
