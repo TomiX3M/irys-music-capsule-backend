@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
-const redirectUri = "https://irys-music-capsule-backend.onrender.com//callback"; // must match Spotify app settings
+const redirectUri = "https://irys-music-capsule-backend.onrender.com/callback"; // must match Spotify app settings
 
 // Step 1: Redirect user to Spotify login
 app.get("/login", (req, res) => {
